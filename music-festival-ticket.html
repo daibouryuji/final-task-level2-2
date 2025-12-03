@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,25 +14,25 @@
             --accent-color: #06b6d4;
             --dark-bg: #18181b;
         }
-        
+
         .navbar {
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
         }
-        
+
         .page-header {
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
             color: white;
             padding: 80px 0 50px 0;
             margin-bottom: 40px;
         }
-        
+
         .step-indicator {
             display: flex;
             justify-content: space-between;
             margin-bottom: 40px;
             position: relative;
         }
-        
+
         .step-indicator::before {
             content: '';
             position: absolute;
@@ -42,14 +43,14 @@
             background: #e5e7eb;
             z-index: 0;
         }
-        
+
         .step {
             flex: 1;
             text-align: center;
             position: relative;
             z-index: 1;
         }
-        
+
         .step-circle {
             width: 50px;
             height: 50px;
@@ -63,19 +64,19 @@
             font-weight: bold;
             color: #9ca3af;
         }
-        
+
         .step.active .step-circle {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-color: var(--primary-color);
             color: white;
         }
-        
+
         .step.completed .step-circle {
             background: #10b981;
             border-color: #10b981;
             color: white;
         }
-        
+
         .ticket-card {
             border: 3px solid #e5e7eb;
             border-radius: 15px;
@@ -84,19 +85,19 @@
             cursor: pointer;
             background: white;
         }
-        
+
         .ticket-card:hover {
             border-color: var(--primary-color);
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
         }
-        
+
         .ticket-card.selected {
             border-color: var(--primary-color);
             background: rgba(139, 92, 246, 0.05);
             box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
         }
-        
+
         .price-tag {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -105,14 +106,14 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
-        
+
         .seat-map {
             background: #f9fafb;
             border-radius: 15px;
             padding: 30px;
             margin-bottom: 30px;
         }
-        
+
         .stage {
             background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
             color: white;
@@ -121,11 +122,11 @@
             text-align: center;
             margin-bottom: 30px;
         }
-        
+
         .seat-section {
             margin-bottom: 20px;
         }
-        
+
         .seat {
             width: 30px;
             height: 30px;
@@ -138,55 +139,55 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-        
+
         .seat.available {
             background: #10b981;
             color: white;
         }
-        
+
         .seat.available:hover {
             background: #059669;
             transform: scale(1.1);
         }
-        
+
         .seat.selected {
             background: var(--primary-color);
             color: white;
         }
-        
+
         .seat.sold {
             background: #e5e7eb;
             color: #9ca3af;
             cursor: not-allowed;
         }
-        
+
         .legend-item {
             display: inline-flex;
             align-items: center;
             margin-right: 20px;
         }
-        
+
         .legend-box {
             width: 20px;
             height: 20px;
             border-radius: 3px;
             margin-right: 8px;
         }
-        
+
         .summary-card {
             position: sticky;
             top: 20px;
             background: white;
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
-        
+
         .alert-custom {
             border-left: 4px solid;
             border-radius: 10px;
         }
-        
+
         footer {
             background-color: var(--dark-bg);
             color: white;
@@ -194,11 +195,12 @@
         }
     </style>
 </head>
+
 <body>
     <!-- ナビゲーションバー -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
+            <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-music-note-beamed"></i> LiveHub
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -207,22 +209,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ホーム</a>
+                        <a class="nav-link active" href="index.html">ホーム</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">イベント一覧</a>
+                        <a class="nav-link" href="music-festival-list.html">イベント一覧</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">アーティスト</a>
+                        <a class="nav-link" href="music-artist-list.html">アーティスト</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">チケット購入</a>
+                        <a class="nav-link" href="music-festival-ticket.html">チケット購入</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">マイチケット</a>
+                        <a class="nav-link" href="music-festival-myticket.html">マイチケット</a>
                     </li>
                 </ul>
-                <button class="btn btn-light ms-3 fw-bold">
+                <button class="btn btn-light ms-3 fw-bold" onclick="location.href = './music-login-page.html'">
                     <i class="bi bi-person-circle"></i> ログイン
                 </button>
             </div>
@@ -278,7 +280,7 @@
                 <!-- チケット種類選択 -->
                 <div class="mb-4">
                     <h3 class="fw-bold mb-4"><i class="bi bi-ticket-perforated text-primary"></i> チケット種類を選択</h3>
-                    
+
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="ticket-card" data-price="8000" data-type="一般チケット">
@@ -308,9 +310,11 @@
                                     <div class="price-tag">¥15,000</div>
                                 </div>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> VIPエリア入場可能</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> VIPエリア入場可能
+                                    </li>
                                     <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 優先入場</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 専用ラウンジ利用可能</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 専用ラウンジ利用可能
+                                    </li>
                                     <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 限定グッズ付き</li>
                                     <li><i class="bi bi-check-circle-fill text-success"></i> ドリンク2杯無料</li>
                                 </ul>
@@ -329,7 +333,8 @@
                                 <ul class="list-unstyled mb-0">
                                     <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 全ステージ入場可能</li>
                                     <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 再入場可能</li>
-                                    <li class="mb-2"><i class="bi bi-exclamation-circle-fill text-warning"></i> 当日学生証の提示必須</li>
+                                    <li class="mb-2"><i class="bi bi-exclamation-circle-fill text-warning"></i>
+                                        当日学生証の提示必須</li>
                                     <li><i class="bi bi-check-circle-fill text-success"></i> 25歳以下限定</li>
                                 </ul>
                             </div>
@@ -346,7 +351,8 @@
                                 </div>
                                 <ul class="list-unstyled mb-0">
                                     <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 2名分のチケット</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 通常より¥4,000お得</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 通常より¥4,000お得
+                                    </li>
                                     <li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> 隣同士の座席保証</li>
                                     <li><i class="bi bi-check-circle-fill text-success"></i> オリジナルグッズ付き</li>
                                 </ul>
@@ -358,7 +364,7 @@
                 <!-- 座席選択 -->
                 <div class="mb-4">
                     <h3 class="fw-bold mb-4"><i class="bi bi-grid-3x3-gap text-primary"></i> 座席を選択</h3>
-                    
+
                     <div class="seat-map">
                         <!-- ステージ -->
                         <div class="stage">
@@ -511,7 +517,7 @@
             <div class="col-lg-4">
                 <div class="summary-card">
                     <h5 class="fw-bold mb-4"><i class="bi bi-cart-check"></i> 購入内容</h5>
-                    
+
                     <div class="mb-4">
                         <h6 class="text-muted mb-3">イベント情報</h6>
                         <p class="mb-1 fw-bold">SUMMER MUSIC FESTIVAL 2024</p>
@@ -561,7 +567,8 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-lg w-100 fw-bold mb-2" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none;">
+                    <button class="btn btn-lg w-100 fw-bold mb-2"
+                        style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none;">
                         次へ進む <i class="bi bi-arrow-right"></i>
                     </button>
                     <button class="btn btn-outline-secondary btn-lg w-100">
@@ -625,22 +632,22 @@
 
         // チケットカード選択
         document.querySelectorAll('.ticket-card').forEach(card => {
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function () {
                 document.querySelectorAll('.ticket-card').forEach(c => c.classList.remove('selected'));
                 this.classList.add('selected');
-                
+
                 selectedTicketPrice = parseInt(this.dataset.price);
                 selectedTicketType = this.dataset.type;
-                
+
                 updateSummary();
             });
         });
 
         // 座席選択
         document.querySelectorAll('.seat.available').forEach(seat => {
-            seat.addEventListener('click', function() {
+            seat.addEventListener('click', function () {
                 const seatNumber = this.textContent;
-                
+
                 if (this.classList.contains('selected')) {
                     this.classList.remove('selected');
                     selectedSeats = selectedSeats.filter(s => s !== seatNumber);
@@ -648,7 +655,7 @@
                     this.classList.add('selected');
                     selectedSeats.push(seatNumber);
                 }
-                
+
                 updateSummary();
             });
         });
@@ -685,4 +692,5 @@
         }
     </script>
 </body>
+
 </html>
