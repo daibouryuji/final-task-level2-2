@@ -20,7 +20,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         
         body::before {
@@ -175,7 +175,7 @@
 </head>
 <body>
     <!-- 戻るリンク -->
-    <a href="#" class="back-link">
+    <a href="index.html" class="back-link">
         <i class="bi bi-arrow-left-circle"></i> ホームに戻る
     </a>
 
@@ -265,7 +265,7 @@
                 <div class="text-center">
                     <p class="text-muted mb-0">
                         アカウントをお持ちでない方は
-                        <a href="#" class="text-decoration-none fw-bold" style="color: var(--primary-color);">新規登録</a>
+                        <a href="register_acount.html" class="text-decoration-none fw-bold" style="color: var(--primary-color);">新規登録</a>
                     </p>
                 </div>
             </div>
@@ -292,7 +292,7 @@
             
             if (email && password) {
                 alert('ログイン成功！ホーム画面に遷移します。');
-                // window.location.href = 'index.html';
+                window.location.href = 'index.html';
             } else {
                 document.getElementById('errorAlert').classList.remove('d-none');
             }
