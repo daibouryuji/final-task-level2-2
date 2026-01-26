@@ -7,6 +7,8 @@
     <title>LiveHub - 音楽フェス・ライブ情報サイト</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="img/index.jpg" sizes="32x32" type="image/png">
     <style>
         :root {
             --primary-color: #ff6b6b;
@@ -160,6 +162,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="music-festival-myticket.html">マイチケット</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">マイアカウント</a>
+                    </li>
                 </ul>
                 <button class="btn btn-warning ms-3 fw-bold" onclick="location.href = './music-login-page.html'">
                     <i class="bi bi-person-circle"></i> ログイン
@@ -170,6 +175,14 @@
 
     <!-- ヒーローセクション -->
     <div class="hero-section">
+        <div class="container mt-4" id="deleteMessage" style="display:none;">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill"></i>
+                アカウントが削除されました。
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
+
         <div class="container hero-content text-center">
             <h1 class="display-3 fw-bold mb-4">音楽で繋がる、最高の体験を</h1>
             <p class="lead mb-4">日本全国の音楽フェス・ライブ情報をここで</p>
@@ -187,12 +200,14 @@
                 <button class="btn btn-outline-light btn-lg me-2" onclick="location.href='#openevent'">
                     <i class="bi bi-calendar-event"></i> イベントを探す
                 </button>
-                <button class="btn btn-light btn-lg" onclick="location.href = './music-festival-ticket.html'">
+                <button class="btn btn-outline-light btn-lg" onclick="location.href = './music-festival-ticket.html'">
                     <i class="bi bi-ticket-perforated"></i> チケット購入
                 </button>
             </div>
         </div>
     </div>
+
+
 
     <div class="container">
         <!-- カウントダウン -->
@@ -240,7 +255,8 @@
                 <h2 class="fw-bold" id="openevent">
                     <i class="bi bi-calendar-check text-danger"></i> 開催予定イベント
                 </h2>
-                <a href="music-festival-list.html" class="btn btn-outline-primary">すべて見る <i class="bi bi-arrow-right"></i></a>
+                <a href="music-festival-list.html" class="btn btn-outline-primary">すべて見る <i
+                        class="bi bi-arrow-right"></i></a>
             </div>
 
             <div class="row g-4">
@@ -254,7 +270,7 @@
                                 <div class="month">12月</div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" onclick="location.href='./music-festival-detail.html'">
                             <span class="badge bg-danger genre-badge mb-2">ロック</span>
                             <span class="badge bg-warning text-dark genre-badge mb-2">ポップ</span>
                             <h5 class="card-title fw-bold">SUMMER MUSIC FESTIVAL 2024</h5>
@@ -444,11 +460,12 @@
                 <h2 class="fw-bold">
                     <i class="bi bi-star-fill text-warning"></i> 人気アーティスト
                 </h2>
-                <a href="music-artist-list.html" class="btn btn-outline-primary">すべて見る <i class="bi bi-arrow-right"></i></a>
+                <a href="music-artist-list.html" class="btn btn-outline-primary">すべて見る <i
+                        class="bi bi-arrow-right"></i></a>
             </div>
 
             <div class="row g-4">
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/ff6b6b/ffffff?text=Artist+1" class="artist-img mb-3"
                             alt="アーティスト1">
@@ -460,7 +477,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/4ecdc4/ffffff?text=Artist+2" class="artist-img mb-3"
                             alt="アーティスト2">
@@ -472,7 +489,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/ffe66d/333333?text=Artist+3" class="artist-img mb-3"
                             alt="アーティスト3">
@@ -484,7 +501,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/10b981/ffffff?text=Artist+4" class="artist-img mb-3"
                             alt="アーティスト4">
@@ -496,7 +513,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/f59e0b/ffffff?text=Artist+5" class="artist-img mb-3"
                             alt="アーティスト5">
@@ -508,7 +525,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/ec4899/ffffff?text=Artist+6" class="artist-img mb-3"
                             alt="アーティスト6">
@@ -520,7 +537,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/8b5cf6/ffffff?text=Artist+7" class="artist-img mb-3"
                             alt="アーティスト7">
@@ -532,7 +549,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 col-md-3">
+                <div class="col-12 col-md-3">
                     <div class="artist-card text-center">
                         <img src="https://placehold.co/200x200/3b82f6/ffffff?text=Artist+8" class="artist-img mb-3"
                             alt="アーティスト8">
@@ -556,7 +573,7 @@
                     <a href="#" class="text-decoration-none">
                         <div class="card text-center h-100 border-danger">
                             <div class="card-body">
-                                <i class="bi bi-guitar display-4 text-danger"></i>
+                                <i class="bi bi-vinyl display-4 text-danger"></i>
                                 <h5 class="mt-3">ロック</h5>
                                 <small class="text-muted">45イベント</small>
                             </div>
@@ -638,3 +655,18 @@
             <p class="text-center text-light mb-0">&copy; 2024 LiveHub. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+
+            if (params.get("deleted") === "true") {
+                const msg = document.getElementById("deleteMessage");
+                if (msg) {
+                    msg.style.display = "block";
+                }
+
+                // URLをリセット（再読み込み対策）
+                history.replaceState(null, "", "index.html");
+            }
+        });    </script>
+</body>

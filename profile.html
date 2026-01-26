@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロフィール</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="img/myaccount.jpg" sizes="32x32" type="image/png">
+    <style>
+        :root {
+            --primary-color: #8b5cf6;
+            --secondary-color: #ec4899;
+            --accent-color: #06b6d4;
+            --dark-bg: #18181b;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        html,
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+            background-attachment: fixed;
+
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
+            margin-bottom: 15px;
+        }
+
+        .form-check-input-checkbox {
+            accent-color: #f65c5c;
+        }
+
+        .accordion-item {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .accordion-body {
+            border-radius: 0 0 12px 12px;
+        }
+
+        .accordion-button {
+            border-radius: 12px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            border-radius: 12px 12px 0 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-music-note-beamed"></i> LiveHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="music-festival-list.html">イベント一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="music-artist-list.html">アーティスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="music-festival-ticket.html">チケット購入</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="music-festival-myticket.html">マイチケット</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">マイアカウント</a>
+                    </li>
+
+                </ul>
+                <button class="btn btn-light ms-3 fw-bold" onclick="location.href = './music-login-page.html'">
+                    <i class="bi bi-person-circle"></i> ログイン
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="accordion" id="accordionPrivacy">
+
+            <!-- プライバシー -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="privacyHeader">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#privacyCollapse" aria-expanded="false" aria-controls="privacyCollapse">
+                        プライバシー
+                    </button>
+                </h2>
+
+                <!-- 親の折り畳み領域 -->
+                <div id="privacyCollapse" class="accordion-collapse collapse" data-bs-parent="#accordionPrivacy">
+
+                    <div class="accordion-body">
+
+                        <!-- 子アコーディオンたち -->
+                        <div class="accordion" id="accordionPrivacyAccount">
+
+                            <!-- アカウント情報 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="accountHeader1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#accountCollapse1" aria-expanded="false"
+                                        aria-controls="accountCollapse1">
+                                        アカウント情報
+                                    </button>
+                                </h2>
+
+                                <div id="accountCollapse1" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionPrivacyAccount">
+                                    <div class="accordion-body">
+                                        <label for="passwordCheck1" class="form-label">パスワードを入力してください</label>
+                                        <input type="password" id="passwordCheck1" class="form-control">
+                                        <button type="button" class="btn btn-success mt-2">決定</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- パスワード変更 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="accountHeader2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#accountCollapse2" aria-expanded="false"
+                                        aria-controls="accountCollapse2">
+                                        パスワードを変更
+                                    </button>
+                                </h2>
+
+                                <div id="accountCollapse2" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionPrivacyAccount">
+                                    <div class="accordion-body">
+
+                                        <label for="currentPassword" class="form-label">現在のパスワード</label>
+                                        <input type="password" id="currentPassword" class="form-control">
+
+                                        <label for="newPassword1" class="form-label mt-2">新しいパスワード</label>
+                                        <input type="password" id="newPassword1" class="form-control">
+
+                                        <label for="newPassword2" class="form-label mt-2">新しいパスワード（確認）</label>
+                                        <input type="password" id="newPassword2" class="form-control">
+
+                                        <button type="button" class="btn btn-success mt-2">決定</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- / 子アコーディオン -->
+                    </div>
+                </div><!-- / privacyCollapse -->
+
+
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="paymentHeader">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#paymentCollapse" aria-expanded="false" aria-controls="paymentCollapse">
+                        支払方法
+                    </button>
+                </h2>
+
+                <div id="paymentCollapse" class="accordion-collapse collapse" data-bs-parent="#accordionPrivacy">
+                    <div class="accordion-body">
+
+                        <!-- 子アコーディオン（1つだけでOK） -->
+                        <div class="accordion" id="accordionPayment">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="paymentMethodHeader">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#paymentMethodCollapse" aria-expanded="false"
+                                        aria-controls="paymentMethodCollapse">
+                                        支払方法を選択
+                                    </button>
+                                </h2>
+
+                                <div id="paymentMethodCollapse" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionPayment">
+                                    <div class="accordion-body">
+
+                                        <label for="paymentSelect" class="form-label">支払方法を選択してください</label>
+
+                                        <select class="form-select" id="paymentSelect">
+                                            <option value="">選択してください</option>
+                                            <option value="konbini">コンビニ払い</option>
+                                            <option value="paypay">PayPay</option>
+                                            <option value="card">クレジットカード</option>
+                                            <option value="other">その他</option>
+                                        </select>
+                                        <div id="creditCardForm" class="mt-4" style="display: none;">
+
+                                            <label class="form-label">カード番号</label>
+                                            <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+
+                                            <label class="form-label mt-3">有効期限</label>
+                                            <div class="d-flex gap-2">
+                                                <input type="text" class="form-control" placeholder="MM">
+                                                <input type="text" class="form-control" placeholder="YY">
+                                            </div>
+
+                                            <label class="form-label mt-3">CVC</label>
+                                            <input type="text" class="form-control" placeholder="123">
+
+                                        </div>
+                                        <button type="button" class="btn btn-success mt-3">決定</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- / 子アコーディオン -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="paymentHeader">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#PrCollapse" aria-expanded="false" aria-controls="PrCollapse">
+                        広告の設定
+                    </button>
+                </h2>
+                <div id="PrCollapse" class="accordion-collapse collapse" data-bs-parent="#accordionPrivacy">
+                    <div class="accordion-body">
+
+                        <!-- 子アコーディオン（1つだけでOK） -->
+                        <div class="accordion" id="accordionPr">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">広告を表示</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="paymentHeader">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#DeleteCollapse" aria-expanded="false" aria-controls="DeleteCollapse">
+                        アカウント削除
+                    </button>
+                </h2>
+                <div id="DeleteCollapse" class="accordion-collapse collapse" data-bs-parent="#accordionPrivacy">
+                    <div class="accordion-body">
+                        <!-- 子アコーディオン（1つだけでOK） -->
+                        <div class="accordion" id="accordionDelete">
+                            <div class="alert alert-danger" role="alert">
+                                一度消したアカウントは復元することができません
+                            </div>
+                            <select class="form-select" id="DeleteSelect">
+                                <option value="">アカウント削除の理由を選択してください</option>
+                                <option value="iranai">使わなくなった</option>
+                                <option value="tukainikui">サービスが使いにくい</option>
+                                <option value="bug">アプリの不具合</option>
+                                <option value="other">その他</option>
+                            </select>
+                            <div class="accordion-body">
+                                <label for="passwordCheck2" class="form-label"
+                                    style="color: green;">パスワードを入力してください</label>
+                                <input type="password" id="passwordCheck1" class="form-control">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input-checkbox" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    消したアカウントは復元できないことを確認しました。
+                                </label>
+                            </div>
+                            <button class="btn btn-danger" onclick="deleteAccount()">
+                                アカウント削除
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("paymentSelect").addEventListener("change", function () {
+            const cardForm = document.getElementById("creditCardForm");
+
+            if (this.value === "card") {
+                cardForm.style.display = "block";  // 表示
+            } else {
+                cardForm.style.display = "none";   // 非表示
+            }
+        });
+
+        function deleteAccount() {
+            location.href = "index.html?deleted=true";
+        }
+    </script>
+</body>
+
+</html>
